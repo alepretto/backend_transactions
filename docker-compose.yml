@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+    db_prod:
+        image: postgres
+        restart: always
+        environment:
+            POSTGRES_DB: db_prod
+            POSTGRES_USER: admin
+            POSTGRES_PASSWORD: lagartixa99
+
+        ports:
+            - 5432:5432
+        
+    db_hom:
+        image: postgres
+        restart: always
+        environment:
+            POSTGRES_DB: db_hom
+            POSTGRES_USER: admin
+            POSTGRES_PASSWORD: lagartixa99
+
+        ports:
+            - 5433:5432
+        
+            
