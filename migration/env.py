@@ -17,6 +17,12 @@ fileConfig(config.config_file_name)
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
+from pathlib import Path
+import sys
+
+root_path = Path(__file__).resolve().parent.parent
+sys.path.append(str(root_path))
+
 from local_env import config as db_config
 from app.database import Base
 
