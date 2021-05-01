@@ -6,7 +6,7 @@ from local_env import config
 
 JWT_SECRET = config.SECRET
 JWT_ALGORITHM = config.ALGORITHM
-print(JWT_SECRET, JWT_ALGORITHM)
+
 
 
 def sign_jwt(user_id) -> Dict[str, str]:
@@ -14,7 +14,7 @@ def sign_jwt(user_id) -> Dict[str, str]:
 
     token: str = jwt.encode(payload, key=JWT_SECRET, algorithm=JWT_ALGORITHM)
 
-    return {"acess_token": str(token), "user": user_id}
+    return {"acess_token": token, "user": user_id}
 
 
 def decode_jwt(token: str):
