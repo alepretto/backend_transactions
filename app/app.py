@@ -19,5 +19,5 @@ app.add_middleware(
 )
 
 app.include_router(users_router)
-app.include_router(stock_router, dependencies=[Depends(JWTBearer())])
-app.include_router(transactions_router, dependencies=[Depends(JWTBearer())])
+app.include_router(stock_router) # , dependencies=[Depends(JWTBearer())]
+app.include_router(transactions_router)

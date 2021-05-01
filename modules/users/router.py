@@ -13,7 +13,7 @@ users_router = APIRouter(prefix="/users")
 users: List[schemas.UserSchema] = []
 
 
-@users_router.get("/", dependencies=[Depends(JWTBearer())])
+@users_router.get("/")
 async def get_users(db: Session = Depends(get_db)):
 
     users = helper.get_users(db)
